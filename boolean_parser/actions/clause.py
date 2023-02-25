@@ -169,3 +169,5 @@ class Condition(BaseAction):
 
         return value
 
+    def to_dict(self):
+        return self.data
