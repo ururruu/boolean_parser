@@ -74,6 +74,11 @@ class BaseBool(object):
         strcond = ', '.join([repr(c) for c in self.conditions])
         return f'{self.logicop}_({strcond})'
 
+    def to_dict(self):
+        return {
+            self.logicop: [condition.to_dict() for condition in self.conditions]
+        }
+
 
 class BoolNot(BaseBool):
     ''' Class for boolean Not logic '''
